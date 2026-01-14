@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="contact">
+            <h1>Endrit Mehaj</h1>
+
+            <div class="c">
+                <a href="https://github.com/emehaj" target="_blank" rel="noopener noreferred">
+                    <p>
+                        <img src="./images/github-logo.svg" alt="github icon">
+                        @emehaj
+                    </p>
+                </a>
+                <a href="mailto:emehaj111@gmail.com" target="_blank" rel="noopener noreferred">
+                    <p>
+                        <img src="./images/envelope-simple.svg" alt="envelope icon">
+                        emehaj111@gmail.com
+                    </p>
+                </a>
+                <a href="https://linkedin.com/in/endrit-mehaj/" target="_blank" rel="noopener noreferred">
+                    <p>
+                        <img src="./images/linkedin-logo.svg" alt="linkedin logo">
+                        LinkedIn
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div class="skills">
+            <h2>Skills</h2>
+
+            <div class="lang">
+                <img src="./images/html.svg" alt="html logo">
+                <img src="./images/css.svg" alt="css logo">
+                <img src="./images/javascript.svg" alt="javascript logo">
+                <img src="./images/Git_icon.svg" alt="git logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Projects</h1>
+
+
+        <div class="options">
+            <button type="button" class="allButton active" data-filter="all">All</button>
+
+            <button type="button" class="hcButton" data-filter="htmlcss">HTML / CSS</button>
+
+            <button type="button" class="jsButton" data-filter="javascript">JavaScript</button>
+        </div>
+
+        <div id="projects"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
