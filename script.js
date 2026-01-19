@@ -6,7 +6,7 @@ let projects = [];
 
 const sb = window.supabase.createClient(
     "https://ihwaxmhsanxznaopnvtz.supabase.co",
-    "sb_publishable_cAAIiJW63lR-7NG99-RnkQ__mnu4EVJ"
+    "sb_publishable_cAAIiJW63lR-7NG99-RnkQ__mnu4EVJ",
 );
 
 async function loadProjects() {
@@ -66,13 +66,13 @@ function createProjectCard(p) {
 
     const tag = document.createElement("p");
     tag.classList.add("tag");
-    p.tag === "JavaScript"
-        ? tag.classList.add("javascript")
-        : tag.classList.add("htmlcss");
-    tag.textContent = `${p.tag}`;
+    p.tag === "HTML / CSS"
+        ? (tag.innerHTML = `<span class="tech">HTML</span> <span class="tech">CSS</span>`)
+        : (tag.innerHTML = `<span class="tech">${p.tag}</span>`);
 
     const formattedDate = document.createElement("p");
-    formattedDate.textContent = `${formatted}`;
+    formattedDate.classList.add("date");
+    formattedDate.innerHTML = `<img src="./images/calendar-dots.svg" /> ${formatted}`;
 
     label.append(tag, formattedDate);
 
@@ -84,13 +84,13 @@ function createProjectCard(p) {
     links.classList.add("url");
     links.append(
         createLink(p.url, "./images/globe.svg", "globe icon"),
-        createLink(p.github, "./images/github-logo.svg", "github icon"),
+        createLink(p.github, "./images/github_black.svg", "github icon"),
         createLink(
             p.sourceurl,
             "./images/FrontEndMentor.png",
             "fem logo",
-            "Frontend Mentor"
-        )
+            "Frontend Mentor",
+        ),
     );
     textWrapper.append(label, projectName, links);
 

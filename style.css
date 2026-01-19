@@ -1,8 +1,11 @@
 :root {
-    --body: rgba(202, 240, 248, 0.3);
+    --body: hsl(210, 40%, 96%);
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
     --green: rgba(202, 248, 202);
+    --text-color: hsl(215, 16%, 47%);
+    --heading: hsl(222, 47%, 11%);
+    --date: rgb(148, 163, 184);
 
     --javascript: #f7df1e;
     --htmlcss: linear-gradient(
@@ -20,27 +23,39 @@
 
 body {
     padding: 100px 0;
-    font-family: "Domine", serif;
+    color: var(--text-color);
     background-color: var(--body);
     display: grid;
     justify-items: center;
     font-family: "Roboto", sans-serif;
 }
 
+h1 {
+    color: var(--heading);
+}
+
 header {
     display: grid;
     gap: 100px;
     margin-bottom: 100px;
+    text-align: center;
+
+    & p {
+        padding: 0 20px;
+    }
 
     & > .contact {
         display: grid;
         justify-items: center;
-        gap: 10px;
 
         & > h1 {
             font-family: "Oswald", sans-serif;
-            font-size: 80px;
+            font-size: 90px;
             text-align: center;
+        }
+
+        & > p {
+            margin: 10px 0 20px 0;
         }
 
         & > .c {
@@ -60,12 +75,14 @@ header {
                     display: flex;
                     gap: 3px;
                     align-items: center;
-                }
-            }
+                    background-color: #324052;
+                    padding: 10px;
+                    border-radius: 50%;
 
-            & img {
-                width: 20px;
-                height: 20px;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
             }
         }
     }
@@ -73,19 +90,23 @@ header {
     & > .skills {
         display: grid;
         justify-items: center;
-        gap: 20px;
 
-        & > h2 {
-            font-size: 32px;
+        & > h1 {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        & > p {
+            margin: 10px 0 50px 0;
         }
 
         & > .lang {
             display: flex;
-            gap: 10px;
+            gap: 20px;
 
             & > img {
-                width: 50px;
-                height: 50px;
+                width: 65px;
+                height: 65px;
             }
         }
     }
@@ -93,26 +114,50 @@ header {
 
 main {
     width: fit-content;
+    display: grid;
+
+    & > h1 {
+        font-size: 35px;
+        justify-self: center;
+    }
+
+    & > p {
+        width: 100%;
+        max-width: 700px;
+        justify-self: center;
+        text-align: center;
+        padding: 0 20px;
+        margin: 20px 0 60px 0;
+    }
 
     & > .options {
+        width: fit-content;
         display: flex;
-        gap: 10px;
+        justify-self: center;
+        justify-content: space-between;
+        padding: 5px;
+        background-color: var(--white);
+        border-radius: 5px;
 
         & > button {
             font-size: 16px;
-            padding: 5px 20px;
-            font-weight: bold;
-            border: 1px solid var(--black);
+            padding: 10px 20px;
+            color: #64748b;
+            border: none;
             outline: none;
             border-radius: 15px;
             background-color: var(--white);
             cursor: pointer;
-            margin: 20px 0 30px 0;
+            border-radius: 5px;
 
             &.active {
-                background-color: var(--green);
-                border-color: green;
-                outline: 1px solid green;
+                color: var(--white);
+                background-color: #0f172a;
+            }
+
+            &:hover:not(&.active) {
+                color: #0f172a;
+                background-color: #f8fafc;
             }
         }
     }
@@ -150,8 +195,15 @@ main {
 
                     & > .tag {
                         font-weight: bold;
-                        padding: 4px 10px;
-                        border-radius: 3px;
+                        display: flex;
+                        gap: 8px;
+
+                        & > .tech {
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            color: #4f46e5;
+                            background-color: #eef2ff;
+                        }
                     }
 
                     & > .htmlcss {
@@ -162,11 +214,20 @@ main {
                     & > .javascript {
                         background-color: var(--javascript);
                     }
+
+                    & > .date {
+                        color: var(--date);
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
                 }
 
                 & > .name {
-                    font-size: 28px;
+                    font-size: 25px;
                     font-weight: 700;
+                    color: var(--heading);
+                    font-family: "Outfit", sans-serif;
                 }
 
                 & > .url {
@@ -199,11 +260,19 @@ main {
 @media screen and (max-width: 800px) {
     header {
         .contact > h1 {
-            font-size: 45px;
+            font-size: 55px;
         }
     }
-    main > #projects {
-        grid-template-columns: 1fr;
+    main {
+        & > .options {
+            & > button {
+                font-size: 14px;
+            }
+        }
+        & > #projects {
+            grid-template-columns: 1fr;
+            justify-self: center;
+        }
     }
 }
 
