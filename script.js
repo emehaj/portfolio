@@ -83,7 +83,7 @@ function createProjectCard(p) {
     const links = document.createElement("div");
     links.classList.add("url");
     links.append(
-        createLink(p.url, "./images/globe.svg", "globe icon"),
+        createLink(p.url, "./images/external-link.svg", "globe icon"),
         createLink(p.github, "./images/github_black.svg", "github icon"),
         createLink(
             p.sourceurl,
