@@ -30,7 +30,7 @@ function renderProjects() {
     if (currentFilter === "htmlcss") {
         filteredProjects = projects.filter((px) => px.tag === "HTML / CSS");
     } else if (currentFilter === "javascript") {
-        filteredProjects = projects.filter((px) => px.tag === "JavaScript");
+        filteredProjects = projects.filter((px) => px.tag === "JAVASCRIPT");
     }
 
     filteredProjects
