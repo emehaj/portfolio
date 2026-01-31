@@ -5,7 +5,7 @@ It serves as a central place where visitors can explore my work and learn more a
 
 ## Live Demo
 
-[em-personalportfolio.vercel.app/](https://em-personalportfolio.vercel.app/)
+[em-personalportfolio.vercel.app](https://em-personalportfolio.vercel.app)
 
 ## Features
 

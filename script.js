@@ -42,7 +42,15 @@ function renderProjects() {
 
 function createProjectCard(p) {
     const div = document.createElement("div");
-    div.className = "project";
+    div.classList.add("project");
+
+    const bottomLeft = document.createElement("img");
+    bottomLeft.src = "./images/control.svg";
+    bottomLeft.classList.add("bottom-left");
+
+    const topRight = document.createElement("img");
+    topRight.src = "./images/control.svg";
+    topRight.classList.add("top-right");
 
     const dbDate = p.created_at;
 
@@ -76,7 +84,7 @@ function createProjectCard(p) {
 
     label.append(tag, formattedDate);
 
-    const projectName = document.createElement("p");
+    const projectName = document.createElement("h1");
     projectName.classList.add("name");
     projectName.textContent = `${p.name}`;
 
@@ -94,9 +102,14 @@ function createProjectCard(p) {
     );
     textWrapper.append(label, projectName, links);
 
-    div.append(img, textWrapper);
+    const projectContainer = document.createElement("div");
+    projectContainer.classList.add("project-container")
 
-    container.appendChild(div);
+    div.append(bottomLeft, topRight, img, textWrapper);
+
+    projectContainer.appendChild(div)
+
+    container.appendChild(projectContainer);
 }
 
 function createLink(href, imgSrc, alt, title) {
